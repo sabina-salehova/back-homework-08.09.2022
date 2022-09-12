@@ -2,6 +2,8 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model List<Product>
+
 <!--SLIDER START-->
 <div class="slider">
     <div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="slider-shop" data-source="gallery" style="background:rgba(255,255,255,0);padding:0px;">
@@ -422,124 +424,29 @@
             <div class="col-12">
                 <div id="js-grid-blog-posts" class="cbp">
 
-                    <div class="cbp-item CausalShirts others wow slideInUp">
-                        <a class="portfolio-circle-cart" href="shop/shop-cart.html">
-                            <i class="fa fa-shopping-cart"></i>
-                        </a>
-                        <div class="cbp-caption-defaultWrap  owl-theme sync-portfolio-carousel owl-carousel">
-                            <div class="item"> <a href="shop/img/product-listing/p24.jpg" class="cbp-caption" data-fancybox="gallery1" data-title="Shirt Name"><img src="shop/img/product-listing/p24.jpg" alt=""></a></div>
-                            <div class="item"> <a href="shop/img/product-listing/p25.jpg" class="cbp-caption" data-fancybox="gallery1" data-title="Shirt Name"><img src="shop/img/product-listing/p25.jpg" alt=""></a></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 text-center">
-                                <a href="shop/product-detail.html" target="_blank" class="cbp-l-grid-blog-title portfolio-title">1 Light Wear </a>
+                    @foreach (var item in Model)
+                    {
+                        <div class="cbp-item CausalShirts others wow slideInUp">
+                            <a class="portfolio-circle-cart" href="~/shop/shop-cart.html">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                            <div class="cbp-caption-defaultWrap  owl-theme sync-portfolio-carousel owl-carousel">
+                                <div class="item"> <a href="~/shop/img/product-listing/p24.jpg" class="cbp-caption" data-fancybox="gallery1" data-title="Shirt Name"><img src="~/shop/img/product-listing/@item.imageUrl1" alt=""></a></div>
+                                <div class="item"> <a href="~/shop/img/product-listing/p25.jpg" class="cbp-caption" data-fancybox="gallery1" data-title="Shirt Name"><img src="~/shop/img/product-listing/@item.imageUrl2" alt=""></a></div>
                             </div>
-                            <div class="col-12 text-center">
-                                <div class="cbp-l-grid-blog-desc portfolio-des">$999.00</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cbp-item formalShirts CausalShirts wow slideInUp">
-                        <a class="portfolio-circle-cart" href="shop/shop-cart.html">
-                            <i class="fa fa-shopping-cart"></i>
-                        </a>
-                        <div class="cbp-caption-defaultWrap  owl-theme sync-portfolio-carousel owl-carousel">
-                            <div class="item"> <a href="shop/img/product-listing/p26.jpg" class="cbp-caption" data-fancybox="gallery2" data-title="Shirt Name"> <img src="shop/img/product-listing/p26.jpg" alt=""></a></div>
-                            <div class="item"> <a href="shop/img/product-listing/p27.jpg" class="cbp-caption" data-fancybox="gallery2" data-title="Shirt Name"><img src="shop/img/product-listing/p27.jpg" alt=""></a></div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-12 text-center">
-                                <a href="shop/product-detail.html" target="_blank" class="cbp-l-grid-blog-title portfolio-title">2 Light Wear </a>
-                            </div>
-                            <div class="col-12 text-center">
-                                <div class="cbp-l-grid-blog-desc portfolio-des">$999.00</div>
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <a href="~/shop/product-detail.html" target="_blank" class="cbp-l-grid-blog-title portfolio-title">@item.name </a>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <div class="cbp-l-grid-blog-desc portfolio-des">$@item.price</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    }
 
-                    <div class="cbp-item CausalShirts others wow slideInUp">
-                        <a class="portfolio-circle-cart" href="shop/shop-cart.html">
-                            <i class="fa fa-shopping-cart"></i>
-                        </a>
-                        <div class="cbp-caption-defaultWrap  owl-theme sync-portfolio-carousel owl-carousel">
-                            <div class="item"> <a href="shop/img/product-listing/p30.jpg" class="cbp-caption" data-fancybox="gallery3" data-title="Shirt Name"> <img src="shop/img/product-listing/p30.jpg" alt=""></a></div>
-                            <div class="item"> <a href="shop/img/product-listing/p31.jpg" class="cbp-caption" data-fancybox="gallery3" data-title="Shirt Name"><img src="shop/img/product-listing/p31.jpg" alt=""></a></div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-12 text-center">
-                                <a href="shop/product-detail.html" target="_blank" class="cbp-l-grid-blog-title portfolio-title">3 Light Wear </a>
-                            </div>
-                            <div class="col-12 text-center">
-                                <div class="cbp-l-grid-blog-desc portfolio-des">$999.00</div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="cbp-item formalShirts CausalShirts wow slideInUp">
-
-                        <a class="portfolio-circle-cart" href="shop/shop-cart.html">
-                            <i class="fa fa-shopping-cart"></i>
-                        </a>
-
-                        <div class="cbp-caption-defaultWrap  owl-theme sync-portfolio-carousel owl-carousel">
-                            <div class="item"> <a href="shop/img/product-listing/p28.jpg" class="cbp-caption" data-fancybox="gallery4" data-title="Shirt Name"> <img src="shop/img/product-listing/p28.jpg" alt=""></a></div>
-                            <div class="item"> <a href="shop/img/product-listing/p29.jpg" class="cbp-caption" data-fancybox="gallery4" data-title="Shirt Name"><img src="shop/img/product-listing/p29.jpg" alt=""></a></div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-12 text-center">
-                                <a href="shop/product-detail.html" target="_blank" class="cbp-l-grid-blog-title portfolio-title">4 Long Frock</a>
-                            </div>
-                            <div class="col-12 text-center">
-                                <div class="cbp-l-grid-blog-desc portfolio-des">$999.00</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cbp-item motion CausalShirts wow slideInUp">
-                        <a class="portfolio-circle-cart" href="shop/shop-cart.html">
-                            <i class="fa fa-shopping-cart"></i>
-                        </a>
-
-                        <div class="cbp-caption-defaultWrap  owl-theme sync-portfolio-carousel owl-carousel">
-                            <div class="item"> <a href="shop/img/product-listing/p34.jpg" class="cbp-caption" data-fancybox="gallery5" data-title="Shirt Name"> <img src="shop/img/product-listing/p34.jpg" alt=""></a></div>
-                            <div class="item"> <a href="shop/img/product-listing/p35.jpg" class="cbp-caption" data-fancybox="gallery5" data-title="Shirt Name"><img src="shop/img/product-listing/p35.jpg" alt=""></a></div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-12 text-center">
-                                <a href="shop/product-detail.html" target="_blank" class="cbp-l-grid-blog-title portfolio-title">5 Casual Wear </a>
-                            </div>
-                            <div class="col-12 text-center">
-                                <div class="cbp-l-grid-blog-desc portfolio-des">$999.00</div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="cbp-item formalShirts CausalShirts wow slideInUp">
-                        <a class="portfolio-circle-cart" href="shop/shop-cart.html">
-                            <i class="fa fa-shopping-cart"></i>
-                        </a>
-
-                        <div class="cbp-caption-defaultWrap  owl-theme sync-portfolio-carousel owl-carousel">
-                            <div class="item"> <a href="shop/img/product-listing/p32.jpg" class="cbp-caption" data-fancybox="gallery6" data-title="Shirt Name"> <img src="shop/img/product-listing/p32.jpg" alt=""></a></div>
-                            <div class="item"> <a href="shop/img/product-listing/p33.jpg" class="cbp-caption" data-fancybox="gallery6" data-title="Shirt Name"><img src="shop/img/product-listing/p33.jpg" alt=""></a></div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-12 text-center">
-                                <a href="shop/product-detail.html" target="_blank" class="cbp-l-grid-blog-title portfolio-title">6 Casual Wear </a>
-                            </div>
-                            <div class="col-12 text-center">
-                                <div class="cbp-l-grid-blog-desc portfolio-des">$999.00</div>
-                            </div>
-                        </div>
-
-                    </div>
 
                 </div>
             </div>
@@ -583,8 +490,8 @@
                         <div class="card">
                             <span class="product-type">NEW</span>
                             <div class="image-holder">
-                                <a href="shop/img/l1.jpg" data-fancybox="lastest_product" data-title="Shirt Name">
-                                    <img src="shop/img/l1.jpg" class="card-img-top" alt="Lastest Arrivals 1">
+                                <a href="~/shop/img/l1.jpg" data-fancybox="lastest_product" data-title="Shirt Name">
+                                    <img src="~/shop/img/l1.jpg" class="card-img-top" alt="Lastest Arrivals 1">
                                 </a>
                             </div>
                             <div class="card-body">
@@ -594,160 +501,6 @@
                                     </div>
                                     <div class="col-12 text-center">
                                         <p class="card-text"> $999.00</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="lastest_arrival_items item">
-                        <a href="#" class="lastest-addto-cart"><i class="fa fa-shopping-cart"></i></a>
-                        <div class="card">
-                            <span class="product-type">NEW</span>
-                            <div class="image-holder">
-                                <a href="shop/img/l7.jpg" data-fancybox="lastest_product" data-title="Lastest Arrivals 1">
-                                    <img src="shop/img/l7.jpg" class="card-img-top" alt="Lastest Arrivals 1">
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-12 text-center">
-                                        <h5 class="card-title">2 Light Wear</h5>
-                                    </div>
-                                    <div class="col-12 text-center">
-                                        <p class="card-text text-center"> $999.00</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="lastest_arrival_items item">
-                        <a href="#" class="lastest-addto-cart"><i class="fa fa-shopping-cart"></i></a>
-                        <div class="card">
-                            <span class="product-type">NEW</span>
-                            <div class="image-holder">
-                                <a href="shop/img/l8.jpg" data-fancybox="lastest_product" data-title="Lastest Arrivals 1">
-                                    <img src="shop/img/l8.jpg" class="card-img-top" alt="Lastest Arrivals 1">
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-12 text-center">
-                                        <h5 class="card-title">3 Long Frock</h5>
-                                    </div>
-                                    <div class="col-12 text-center">
-                                        <p class="card-text text-center"> $999.00</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="lastest_arrival_items item">
-                        <a href="#" class="lastest-addto-cart"><i class="fa fa-shopping-cart"></i></a>
-                        <div class="card">
-                            <span class="product-type">NEW</span>
-                            <div class="image-holder">
-                                <a href="shop/img/l9.jpg" data-fancybox="lastest_product" data-title="Lastest Arrivals 1">
-                                    <img src="shop/img/l9.jpg" class="card-img-top" alt="Lastest Arrivals 1">
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-12 text-center">
-                                        <h5 class="card-title">4 Casual Wear</h5>
-                                    </div>
-                                    <div class="col-12 text-center">
-                                        <p class="card-text text-center"> $999.00</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="lastest_arrival_items item">
-                        <a href="#" class="lastest-addto-cart"><i class="fa fa-shopping-cart"></i></a>
-                        <div class="card">
-                            <span class="product-type">NEW</span>
-                            <div class="image-holder">
-                                <a href="shop/img/l10.jpg" data-fancybox="lastest_product" data-title="Lastest Arrivals 1">
-                                    <img src="shop/img/l10.jpg" class="card-img-top" alt="Lastest Arrivals 1">
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-12 text-center">
-                                        <h5 class="card-title">5 Casual Wear</h5>
-                                    </div>
-                                    <div class="col-12 text-center">
-                                        <p class="card-text text-center"> $999.00</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="lastest_arrival_items item">
-                        <a href="#" class="lastest-addto-cart"><i class="fa fa-shopping-cart"></i></a>
-                        <div class="card">
-                            <span class="product-type">NEW</span>
-                            <div class="image-holder">
-                                <a href="shop/img/l11.jpg" data-fancybox="lastest_product" data-title="Lastest Arrivals 1">
-                                    <img src="shop/img/l11.jpg" class="card-img-top" alt="Lastest Arrivals 1">
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-12 text-center">
-                                        <h5 class="card-title">6 Light Wear</h5>
-                                    </div>
-                                    <div class="col-12 text-center">
-                                        <p class="card-text text-center"> $999.00</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="lastest_arrival_items item">
-                        <a href="#" class="lastest-addto-cart"><i class="fa fa-shopping-cart"></i></a>
-                        <div class="card">
-                            <span class="product-type">NEW</span>
-                            <div class="image-holder">
-                                <a href="shop/img/l12.jpg" data-fancybox="lastest_product" data-title="Lastest Arrivals 1">
-                                    <img src="shop/img/l12.jpg" class="card-img-top" alt="Lastest Arrivals 1">
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-12 text-center">
-                                        <h5 class="card-title">7 Light Wear</h5>
-                                    </div>
-                                    <div class="col-12 text-center">
-                                        <p class="card-text text-center"> $999.00</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="lastest_arrival_items item">
-                        <a href="#" class="lastest-addto-cart"><i class="fa fa-shopping-cart"></i></a>
-                        <div class="card">
-                            <span class="product-type">NEW</span>
-                            <div class="image-holder">
-                                <a href="shop/img/l7.jpg" data-fancybox="lastest_product" data-title="Lastest Arrivals 1">
-                                    <img src="shop/img/l13.jpg" class="card-img-top" alt="Lastest Arrivals 1">
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-12 text-center">
-                                        <h5 class="card-title">8 Casual Wear</h5>
-                                    </div>
-                                    <div class="col-12 text-center">
-                                        <p class="card-text text-center"> $999.00</p>
                                     </div>
                                 </div>
                             </div>

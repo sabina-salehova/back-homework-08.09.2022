@@ -11,27 +11,15 @@ namespace homework_08._09._2022.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            List<Product> pro = new List<Product>();
+            pro.Add(new Product { id = 1, name = "mehsul1", price = 54, rating = 4, imageUrl1 = "p24.jpg", imageUrl2 = "p25.jpg" });
+            pro.Add(new Product { id = 2, name = "mehsul2", price = 34, rating = 4, imageUrl1 = "p24.jpg", imageUrl2 = "p25.jpg" });
+            pro.Add(new Product { id = 3, name = "mehsul3", price = 87, rating = 3, imageUrl1 = "p24.jpg", imageUrl2 = "p25.jpg" });
+            pro.Add(new Product { id = 4, name = "mehsul4", price = 21, rating = 1, imageUrl1 = "p24.jpg", imageUrl2 = "p25.jpg" });
+            pro.Add(new Product { id = 5, name = "mehsul5", price = 34, rating = 2, imageUrl1 = "p24.jpg", imageUrl2 = "p25.jpg" });
+            return View(pro);
         }
     }
 }
